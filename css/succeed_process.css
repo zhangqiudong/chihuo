@@ -1,0 +1,125 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+.progressbar {
+    margin: 1em 0;
+}
+@media only screen and (min-width: 650px) {
+    .progressbar {
+        display: block;
+    }
+}
+.progressbar .shim {
+    display: none;
+    width: 100%;
+}
+.progressbar .holder {
+    position: relative;
+}
+@media only screen and (min-width: 750px) {
+    .progressbar .holder {
+        font-size: 90%;
+    }
+}
+@media only screen and (min-width: 900px) {
+    .progressbar .holder {
+        font-size: 95%;
+    }
+}
+.progressbar .holder .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e2e2e2;
+}
+.progressbar .holder .bar .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #d0a86b;
+}
+.progressbar .holder .labels {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2em;
+    text-align: center;
+}
+.progressbar .holder .labels i {
+    display: block;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.progressbar .holder .labels i::before {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    content: '';
+    width: .9em;
+    height: .9em;
+    border-radius: 50%;
+    border: solid 3px #e2e2e2;
+    background-color: #e2e2e2;
+    -webkit-transform: translateX(-50%) translateY(50%);
+    transform: translateX(-50%) translateY(50%);
+    transition: border-color 100ms ease-in, background-color 150ms ease-in;
+}
+.progressbar .holder .labels i::after {
+    display: block;
+    content: attr(data-label);
+    position: relative;
+    top: 0;
+    padding-bottom: .5rem;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    /*color: #4598B5;*/opacity: 0.4;
+    transition: color 150ms ease-in, top 100ms ease-out;
+}
+.progressbar .holder .labels i:hover::before, .progressbar .holder .labels i:focus::before {
+    background-color: #d0a86b;
+}
+.progressbar .holder .labels i:hover::after, .progressbar .holder .labels i:focus::after {
+    top: -.2em;
+}
+.progressbar .holder .labels i.read::before {
+    border-color: #d0a86b;
+}
+.progressbar .holder .labels i.read:hover::before, .progressbar .holder .labels i.read:focus::before {
+    background-color: #d0a86b;
+}
+.progressbar .holder .labels i.reading::after {
+    color: #d0a86b;opacity: 1;
+}
+.progressbar .holder .labels i.reading:hover::after, .progressbar .holder .labels i.reading:focus::after {
+    top: 0;
+}
+.progressbar.fixed .holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.progressbar.fixed .shim {
+    display: block;
+}

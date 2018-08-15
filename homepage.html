@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loaders.min.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loading2.css">
+    <script src="js/rem.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/others.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+
+            $(".scene").fadeOut(1000);
+            setTimeout("$('.contents').css('display','block')",1000);
+
+        })
+    </script>
+
+</head>
+<!--loading页开始-->
+<div class="scene" style="">
+    <svg version="1.1" id="dc-spinner" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width:"38"
+    height:"38" viewBox="0 0 38 38" preserveAspectRatio="xMinYMin meet" >
+    <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="grey">LOADING
+        <animate
+                attributeName="opacity"
+                values="0;1;0" dur="1.8s"
+                repeatCount="indefinite">
+    </text>
+
+    <!--灰色部分-->
+    <path fill="#ffedec" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
+    C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
+    C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
+    </path>
+
+    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
+    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
+    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
+    <!--</path>-->
+    <!--红色部分-->
+    <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
+			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 20 20"
+                to="360 20 20"
+                calcMode="spline"
+                keySplines="0.4, 0, 0.2, 1"
+                keyTimes="0;1"
+                dur="2s"
+                repeatCount="indefinite" />
+    </path>
+
+    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
+    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
+    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
+    <!--<animateTransform-->
+    <!--attributeName="transform"-->
+    <!--type="rotate"-->
+    <!--from="0 20 20"-->
+    <!--to="360 20 20"-->
+    <!--dur="1.8s"  -->
+    <!--repeatCount="indefinite" />-->
+    <!--</path>-->
+    </svg>
+</div>
+
+<body style="background: #F2F2F2;">
+<div class="contents" style="display:none">
+
+
+<div class="warp warptwo clearfloat" >
+    <div class="detail clearfloat">
+        <div class="tg_more">
+            <div class="">
+                <script type="text/javascript">
+                    $(function(){
+                        var tabNum=$(".important").find("li");
+                        var contentNum=$(".contents").children();
+                        var timer;
+                        $(tabNum).each(function(index){
+                            $(this).hover(function(){
+                                var that=$(this)
+                                timer=window.setTimeout(function(){
+                                    $(contentNum).eq(index).css({"display":"block"});
+                                    $(contentNum).eq(index).siblings().css({"display":"none"});
+                                    that.find("a").css({"background":"#FFF","color":"#fff"});
+                                    that.find("strong").show();
+                                    that.siblings().find("strong").hide();
+                                    that.siblings().find("a").css({"background":"#fff","color":"black"});
+                                },100)
+                            },function(){
+                                window.clearTimeout(timer);
+                            })
+                        })
+                    })
+                </script>
+
+                <ul class="important myorders_tab cl">
+                    <li class="rcsp_1">
+                        <p>佣金比例</p>
+                        <strong><i></i></strong>
+                    </li>
+                    <li class="rcsp_2">
+                        <p>销量</p>
+                        <strong style="display:none"><i></i></strong>
+                    </li>
+                    <li class="rcsp_2">
+                        <p>分类<i class="iconfont icon-jiantouarrow483"></i></p>
+                        <strong style="display:none"><i></i></strong>
+                    </li>
+                </ul>
+                <div class="contents myorders_con" style="background: transparent;">
+                    <div class="cl">
+                        <div class="important_r">
+                            <div class="purlist verify">
+                                <div class="cname">订单编号：5222340001<span class="orders_state">购买成功</span> </div>
+                                <table>
+                                    <tbody><tr>
+                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                        <td>米诺斯茶餐厅精选二人套餐A</td>
+                                        <td style="text-align: right">x 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>河东万达店</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dateline">有限期至 2018.6.10</td>
+                                        <td style="text-align: right;font-weight: bold;">¥199</td>
+                                    </tr>
+                                    </tbody></table>
+                                <div class="buyagain">推荐人：阿汤哥<span class="orders_state use_now">立即使用</span> </div>
+                            </div>
+                            <div class="purlist verify">
+                                <div class="cname">订单编号：5222340001<span class="orders_state">已使用</span> </div>
+                                <table>
+                                    <tbody><tr>
+                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                        <td>米诺斯茶餐厅精选二人套餐A</td>
+                                        <td style="text-align: right">x 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>河东万达店</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="dateline">有限期至 2018.6.10</td>
+                                        <td style="text-align: right;font-weight: bold;">¥199</td>
+                                    </tr>
+                                    </tbody></table>
+                                <div class="buyagain">推荐人：阿汤哥<span class="orders_state buy_again">再次购买</span> </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cl" style="display: none">
+                        <div class="important_r">
+                            <ul class="incomelist incomelist2">
+                                <li>
+                                    <div class="jin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">金牌推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="yin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="zhun">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">准推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cl" style="display: none">
+                        <div class="important_r">
+                            <ul class="incomelist incomelist2">
+                                <li>
+                                    <div class="jin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">金牌推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="yin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="zhun">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">准推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cl" style="display: none">
+                        <div class="important_r">
+                            <ul class="incomelist incomelist2">
+                                <li>
+                                    <div class="jin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">金牌推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="yin">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="zhun">
+                                        <table>
+                                            <tr>
+                                                <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                <td class="catge">准推广员</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2018.5.30<b>已过期</b></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var down = document.getElementById("down");
+        var count = document.getElementById("count");
+        window.onload = function(){
+            down.onclick = function(){
+                if(count.innerHTML > 1){
+                    count.innerHTML--;
+                }else{
+                    count.innerHTML = 1;
+                }
+            }
+            $(".middle .xia li").click(function() {
+                $(this).addClass('cur').siblings().removeClass('cur');
+            });
+
+        }
+    </script>
+</div>
+
+</div>
+</body>
+
+</html>
