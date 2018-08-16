@@ -1,6 +1,5 @@
 ﻿.error{
     text-align: center;
-    padding-top: 20%;
 }
 .error p {font-size: 0.5rem;margin-bottom: .5rem;color: #757575}
 .error p:nth-child(2){
@@ -302,17 +301,23 @@ font-weight: bold;
     font-size: 0.3rem;
 }
 
-.leve_info table tr{height: 4rem; line-height: 1;}
+.leve_info table tr{height: 3rem; line-height: 1;}
 
 .leve_info table .line {  border-top: 1px solid #eee;}
-.leve_info table tr td:nth-child(1){font-size: .58rem;color: #caa468;width: 30%;text-align: center;padding: 0 .4rem;line-height: 1.3;}
-.leve_info table tr td:nth-child(2){font-size: .6rem;color: #272727;padding: 0 .4rem}
+.leve_info table tr td:nth-child(1){font-size: .5rem;color: #caa468;width: 30%;text-align: center;padding: 0 .4rem;line-height: 1.3;}
+.leve_info table tr td:nth-child(2){font-size: .5rem;color: #272727;padding: 0 .4rem}
 .leve_info table tr td:nth-child(2) small{font-size: .4rem;color: #757575;}
 .leve_info table span{display: block;padding-bottom: .2rem;}
 .leve_info table .tdline {    height: 2px;}
 .leve_info table tr.tdline td{padding: 0 0; width: 100%;}
 .xuzhi{padding: 0 4%;}
-.xz_title{text-align: center;margin-bottom: .5rem;    font-weight: bold;color:#979797;font-size:.5rem;width: 100%;background: url(../images/xuzhi.png) no-repeat;}
+.xz_title{text-align: center;margin-bottom: .5rem;
+    font-weight: bold;color:#979797;font-size:.5rem;width: 100%;
+    background: url(../images/xuzhi.png) no-repeat;
+    background-size: 150% 100%;
+    background-position-x: -2.5rem;
+}
+
 .xz_content{width: 100%;    font-family: monospace;    font-size: .45rem;color:#979797;}
 .xz_content tr td{    vertical-align: top;}
 .withorw{margin-top: .5rem;padding: 0 4%;background: #fff;}

@@ -220,7 +220,7 @@ small {
     padding: 7px 0 0 16px;
 }
 .vip-header h4 {
-    font-size: 16px;
+    font-size: .5rem;
     line-height: 32px;
     font-weight: normal;
 }
@@ -279,7 +279,7 @@ small {
 }
 .vip-club-title {
     line-height: 44px;
-    padding: 0 8px;
+    padding: 0 4%;
 }
 .vip-club-title span {
     color: #252525;
