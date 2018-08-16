@@ -344,6 +344,7 @@ font-weight: bold;
 .weixinzhifu{font-size: .5rem;color: #272727;}
 .purlist{background: #fff;    margin-bottom: 2%;padding: 0.2rem 4%;}
 .purlist table{width: 100%}
+.purlist table tr td{height: 1rem;}
 .purlist table tr td{line-height: 1;}
 .purlist table tr .pur_img{height: 2.5rem;width: 2.5rem;}
 .pur_xuzhi{padding: 0 4%}
