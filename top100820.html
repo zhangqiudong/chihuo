@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>佣金排行</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loading.css"/>
+    <link rel="stylesheet" href="css/loading2.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/rem.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/others.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+
+            $(".scene").fadeOut(1000);
+            setTimeout("$('.contents').css('display','block')",1000);
+
+        })
+    </script>
+</head>
+<!--loading页开始-->
+<div class="scene" style="">
+    <svg version="1.1" id="dc-spinner" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width:"38"
+    height:"38" viewBox="0 0 38 38" preserveAspectRatio="xMinYMin meet" >
+    <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="grey">LOADING
+        <animate
+                attributeName="opacity"
+                values="0;1;0" dur="1.8s"
+                repeatCount="indefinite">
+    </text>
+
+    <!--灰色部分-->
+    <path fill="#ffedec" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
+    C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
+    C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
+    </path>
+    <!--红色部分-->
+    <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
+			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 20 20"
+                to="360 20 20"
+                calcMode="spline"
+                keySplines="0.4, 0, 0.2, 1"
+                keyTimes="0;1"
+                dur="2s"
+                repeatCount="indefinite" />
+    </path>
+    </svg>
+</div>
+
+<!--loading页结束-->
+
+<body style="background: #F2F2F2">
+<div class="contents" style="display:none">
+    <div class="warp warptwo clearfloat">
+        <div class="detail clearfloat">
+            <!--purcon star-->
+            <div class="purlist top10">
+                <table>
+                    <tr>
+                        <td rowspan="3"  class="pur_img"> </td>
+                        <td>米诺斯茶餐厅精选二人套餐A</td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="yongjin">¥99.00</td>
+
+                    </tr>
+                    <tr>
+                        <td><small>总佣金：</small>¥46.30<span style="float: right">2018.7.20 09:38</span></td>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="yj_cont1">
+                <img src="images/touxiang2.png" style="width: 10%;"><span class="fl">准推广员</span><img src="./images/v1.png" width="7%"><span>排名：20</span><span>佣金：¥0.34</span>
+            </div>
+            <div class="rank_content top_rank">
+                <table>
+                    <tr>
+                        <td> <i class="iconfont icon-jiangbei"></i></td>
+                        <td>锤哥
+                            <span style="border: 1px solid #ff2525;padding: 0 .2rem;color:#ff2525;font-size: .3rem">金牌推广员</span>
+                            <span style="float: right">
+                            <i class="iconfont icon-wenhao"></i><i class="iconfont icon-renminbi"></i><small>2.34</small>
+                        </span>
+                        </td>
+                        <td>+<i class="iconfont icon-renminbi"></i>3.25</td>
+                    </tr>
+                    <tr>
+                        <td> <i class="iconfont icon-jiangbei"></i></td>
+                        <td>托尼老师</td>
+                        <td><i class="iconfont icon-renminbi"></i>2.34</td>
+                    </tr>
+                    <tr>
+                        <td> <i class="iconfont icon-jiangbei"></i></td>
+                        <td>托尼老师</td>
+                        <td><i class="iconfont icon-renminbi"></i>2.34</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>托尼老师</td>
+                        <td><i class="iconfont icon-renminbi"></i>2.34</td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td>托尼老师</td>
+                        <td><i class="iconfont icon-renminbi"></i>2.34</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

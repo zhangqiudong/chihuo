@@ -1,2 +1,0 @@
-# chihuo
-shixian_chihuo

@@ -24,6 +24,12 @@
 
         })
     </script>
+    <style>
+        .important_r{
+            height: 15rem;
+            overflow: scroll;
+        }
+    </style>
 </head>
 <!--loading页开始-->
 <div class="scene" style="">
@@ -86,7 +92,7 @@
                 <script type="text/javascript">
                     $(function(){
                         var tabNum=$(".important").find("li");
-                        var contentNum=$(".contents").children();
+                        var contentNum=$(".contents2").children();
                         var timer;
                         $(tabNum).each(function(index){
                             $(this).hover(function(){
@@ -124,23 +130,30 @@
                         <strong style="display:none"><i></i></strong>
                     </li>
                 </ul>
-                <div class="contents myorders_con" style="background: transparent;">
+                <div class="contents2 myorders_con" style="background: transparent;">
                     <div class="cl">
                         <div class="important_r">
+                           
+
                             <div class="purlist verify">
                                 <div class="cname">订单编号：5222340001<span class="orders_state">购买成功</span> </div>
                                 <table>
                                     <tbody><tr>
-                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
-                                        <td>米诺斯茶餐厅精选二人套餐A</td>
-                                        <td style="text-align: right">x 1</td>
+                                        <td rowspan="2" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                        <td>米诺斯茶餐厅精选二人套餐A河东万达店</td>
+                                        <td style="text-align: right">x 1</td></tr><tr><td class="dateline">有限期至 2018.6.10</td>
+                                        <td style="text-align: right;font-weight: bold;">¥199</td>
                                     </tr>
-                                    <tr>
-                                        <td>河东万达店</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="dateline">有限期至 2018.6.10</td>
+                                    </tbody></table>
+                                <div class="buyagain">推荐人：阿汤哥<span class="orders_state use_now">立即使用</span> </div>
+                            </div>
+							 <div class="purlist verify">
+                                <div class="cname">订单编号：5222340001<span class="orders_state">购买成功</span> </div>
+                                <table>
+                                    <tbody><tr>
+                                        <td rowspan="2" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                        <td>米诺斯茶餐厅精选二人套餐A河东万达店</td>
+                                        <td style="text-align: right">x 1</td></tr><tr><td class="dateline">有限期至 2018.6.10</td>
                                         <td style="text-align: right;font-weight: bold;">¥199</td>
                                     </tr>
                                     </tbody></table>
@@ -150,14 +163,11 @@
                                 <div class="cname">订单编号：5222340001<span class="orders_state">已使用</span> </div>
                                 <table>
                                     <tbody><tr>
-                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
-                                        <td>米诺斯茶餐厅精选二人套餐A</td>
+                                        <td rowspan="2" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                        <td>米诺斯茶餐厅精选二人套餐A河东万达店</td>
                                         <td style="text-align: right">x 1</td>
                                     </tr>
-                                    <tr>
-                                        <td>河东万达店</td>
-                                        <td></td>
-                                    </tr>
+
                                     <tr>
                                         <td class="dateline">有限期至 2018.6.10</td>
                                         <td style="text-align: right;font-weight: bold;">¥199</td>
@@ -165,7 +175,6 @@
                                     </tbody></table>
                                 <div class="buyagain">推荐人：阿汤哥<span class="orders_state buy_again">再次购买</span> </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="cl" style="display: none">
@@ -336,5 +345,62 @@
     </script>
 </div>
 </div>
+ <script>
+
+                                var msg_list_loading = false;
+                                $('.important_r').on('scroll', function(){
+                                    if ( ! msg_list_loading ){
+                                        load_more_msg();
+                                    }
+                                })
+
+                                function load_more_msg(){
+                                    var msg_list = $('.important_r');
+                                    if ( msg_list.height() + msg_list[0].scrollTop >= msg_list[0].scrollHeight - 60 ) {
+                                        msg_list_loading = true;
+                                        // msg_list.append('<div class="loading"></div>');
+                                        $.get('ajax_data.html').done(function( data ){
+                                            msg_list.find(".loading").remove();
+                                            msg_list.append( data );
+                                            msg_list_loading = false;
+                                        });
+
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: './json/myorders.json',
+                                            dataType: 'json',
+                                            success: function (data) {
+
+                                                //将返回值动态加载进下拉框，动态生成标签。
+                                                // alert( data.length);
+                                                for (var i = 0; i < data.length;i++)
+                                                {
+                                                    // $(".withorw_table ").append($('<option >' + data[i].Conpany + '</option>'));
+                                                    var tc_order_number = data[i].order_number;
+                                                    var tc_status = data[i].status;
+                                                    var tc_name = data[i].name;
+                                                    var tc_use_detail = data[i].use_detail;
+                                                    var tc_price = data[i].price;
+                                                    var tc_promoter = data[i].promoter;
+                                                    var tc_status = data[i].status;
+                                                    $(".important_r ").append("<div class='purlist verify'>" +
+                                                        "<div class='cname'>订单编号："+tc_order_number+"<span class='orders_state'" +
+                                                        ">"+tc_status+"</span> </div><table><tbody><tr><td rowspan='3' class='pur_img verify_img'><img src='images/default_img.png' width='100%'> </td>" +
+                                                        "<td>"+tc_name+"</td><td style='text-align: right'>x 1</td></tr><tr><td class='dateline'>有限期至 "+tc_use_detail+"</td>\n" +
+                                                        "<td style='text-align: right;font-weight: bold;'>¥"+tc_price+"</td>" +
+                                                "                                    </tr>" +
+                                                "                                    </tbody></table>" +
+                                                "                                <div class='buyagain'>推荐人："+tc_promoter+"<span class='orders_state use_now'>"+tc_status+"</span> </div>" +
+                                                "                            </div>");
+                                                }
+                                            },
+                                            error: function (XMLHttpRequest, textStatus, errorThown) {
+                                                alert("操作失败！");
+                                            }
+                                        })
+
+                                    }
+                                }
+                            </script>
 </body>
 </html>

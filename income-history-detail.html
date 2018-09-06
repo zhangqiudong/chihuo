@@ -14,12 +14,16 @@
     <script src="js/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(window).load(function(){
-
             $(".scene").fadeOut(1000);
             setTimeout("$('.contents').css('display','block')",1000);
-
         })
     </script>
+    <style>
+        .withorw{
+            height: 12rem;
+            overflow: scroll;
+        }
+    </style>
 </head>
 <!--loading页开始-->
 <div class="scene" style="">
@@ -37,12 +41,6 @@
     C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
     C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
     </path>
-
-    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
-    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
-    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
-    <!--</path>-->
-    <!--红色部分-->
     <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
         <animateTransform
@@ -56,26 +54,14 @@
                 dur="2s"
                 repeatCount="indefinite" />
     </path>
-
-    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
-    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
-    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
-    <!--<animateTransform-->
-    <!--attributeName="transform"-->
-    <!--type="rotate"-->
-    <!--from="0 20 20"-->
-    <!--to="360 20 20"-->
-    <!--dur="1.8s"  -->
-    <!--repeatCount="indefinite" />-->
-    <!--</path>-->
     </svg>
 </div>
 
 <!--loading页结束-->
 <body style="background: #F2F2F2">
-
-<div class="sc_rank">
-    <p>您当前的等级是<img src="">金牌推广员 </p>
+<div class="contents" style="display:none">
+<div class="sc_rank"  style=" padding: .5rem 0;">
+    <p>您当前的等级是<img src="./images/v3.png" style=" margin: 0 .2rem;    width: 7%;">金牌推广员 </p>
     <!--进度条-->
     <div class="progressbar">
         <div class="shim" style="height: 84px;">
@@ -93,44 +79,104 @@
     <!--进度条-->
     <p id="sc_rank_con3"><img src="">您已是<span class="rank_next">本店金牌推广员</span>，享受店铺收入双份佣金 <i class="iconfont icon-jiantou1"></i></p>
 </div>
-<div class="warp warptwo clearfloat">
+<div class="warp warptwo clearfloat"  style="margin-top: 3%">
     <div class="detail clearfloat">
         <div class="tg_more">
             <div class="xuzhi" style="padding: 0 0;">
                 <div class="contents">
                     <div class="cl">
-                        <div class="important_r income_import_r" style="padding-top: .5rem; ">
+                        <div class="important_r income_import_r" style="padding-top: .5rem;overflow: visible ">
                             <div class="withorw">
                                 <p style="font-size: 0.5rem;color: #272727">历史收益</p>
                                 <table class="withorw_table">
                                     <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
                                     <tr>
-                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04 17:26:35</span></td>
-                                        <td class="price">¥199<i class="iconfont icon-jiantou1"></i></td>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
                                     </tr>
                                     <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
                                     <tr>
-                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04 17:26:35</span></td>
-                                        <td class="price">¥199<i class="iconfont icon-jiantou1"></i></td>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
                                     </tr>
                                     <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
                                     <tr>
-                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04 17:26:55</span></td>
-                                        <td class="price">¥199<i class="iconfont icon-jiantou1"></i></td>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
                                     </tr>
-
-
+                                    <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
+                                    <tr>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
+                                    </tr>
+                                    <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
+                                    <tr>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
+                                    </tr>
+                                    <tr class="tdline"><td colspan="2"><div class="line"></div></td></tr>
+                                    <tr>
+                                        <td class="withorw_table_td_11">12笔<br><span>2018.7.04</span></td>
+                                        <td class="price income_month"><i class="iconfont icon-renminbi"></i>2.34</td>
+                                    </tr>
                                 </table>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+<script>
+
+    var msg_list_loading = false;
+    $('.withorw').on('scroll', function(){
+        if ( ! msg_list_loading ){
+            load_more_msg();
+        }
+    })
+
+    function load_more_msg(){
+        var msg_list = $('.withorw');
+        if ( msg_list.height() + msg_list[0].scrollTop >= msg_list[0].scrollHeight - 60 ) {
+            msg_list_loading = true;
+            // msg_list.append('<div class="loading"></div>');
+            $.get('ajax_data.html').done(function( data ){
+                msg_list.find(".loading").remove();
+                msg_list.append( data );
+                msg_list_loading = false;
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: './json/income-history-detail.json',
+                dataType: 'json',
+                success: function (data) {
+
+                    //将返回值动态加载进下拉框，动态生成标签。
+                    // alert( 123);
+                    for (var i = 0; i < data.length;i++)
+                    {
+                        // $(".withorw_table ").append($('<option >' + data[i].Conpany + '</option>'));
+                        var tc_count = data[i].order_count;
+                        var tc_date = data[i].order_day;
+                        var tc_income = data[i].income;
+
+
+                        $(".withorw_table ").append("<tr class='tdline'><td colspan='2'><div class='line'></div></td></tr>"+"<tr><td class='withorw_table_td_11'>"+tc_count+"<br><span>"+tc_date+"</span></td><td class='price income_month'><i class='iconfont icon-renminbi'></i>"+tc_income+
+                            "</td></tr>");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThown) {
+                    alert("操作失败！");
+                }
+            })
+
+        }
+    }
+</script>
 
 </body>
 

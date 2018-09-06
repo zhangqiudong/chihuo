@@ -52,11 +52,11 @@ address,caption,cite,code,dfn,em,th,var,i {
     font-weight: normal;
 }
 body {
-    font: 16px/1.5 tahoma, Verdana, arial, microsoft yahei, "\5b8b\4f53";
+    font: 16px/1.5 PingFang,tahoma, Verdana, arial, microsoft yahei, "\5b8b\4f53";
     color: #676b70;
 }
 a {
-    color: #676b70;
+    color: #757575;
     text-decoration: none;
     outline: none;
 }
@@ -196,7 +196,7 @@ small {
     float: right;
     border-radius: 2rem;
     margin-right: -4%;
-    margin-top: -4%;
+    margin-top: -5%;
 }
 .vip-header dl {
     color: #fff;
@@ -204,8 +204,8 @@ small {
     overflow: hidden;
 }
 .vip-header dt {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     float: left;
     border-radius: 100%;
     border: 4px solid rgba(255, 255, 255, .4);
@@ -220,6 +220,7 @@ small {
     padding: 7px 0 0 16px;
 }
 .vip-header h4 {
+    font-family: "PingFang";
     font-size: .5rem;
     line-height: 32px;
     font-weight: normal;

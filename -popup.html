@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>立即购买</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/succeed_process.css" />
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/loading2.css">
+    <script src="js/rem.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/others.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).load(function(){
+
+            $(".scene").fadeOut(1000);
+            setTimeout("$('.contents').css('display','block')",1000);
+
+        })
+        function toshare(){
+            $(".am-share").addClass("am-modal-active");
+            if($(".sharebg").length>0){
+                $(".sharebg").addClass("sharebg-active");
+            }else{
+                $("body").append('<div class="sharebg"></div>');
+                $(".sharebg").addClass("sharebg-active");
+            }
+            $(".sharebg-active,.share_btn").click(function(){
+                $(".am-share").removeClass("am-modal-active");
+                setTimeout(function(){
+                    $(".sharebg-active").removeClass("sharebg-active");
+                    $(".sharebg").remove();
+                },300);
+            })
+        }
+    </script>
+</head>
+<!--loading页开始-->
+<div class="scene" style="">
+    <svg version="1.1" id="dc-spinner" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width:"38"
+    height:"38" viewBox="0 0 38 38" preserveAspectRatio="xMinYMin meet" >
+    <text x="14" y="21" font-family="Monaco" font-size="2px" style="letter-spacing:0.6" fill="grey">LOADING
+        <animate
+                attributeName="opacity"
+                values="0;1;0" dur="1.8s"
+                repeatCount="indefinite">
+    </text>
+
+    <!--灰色部分-->
+    <path fill="#ffedec" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
+    C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
+    C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
+    </path>
+    <!--红色部分-->
+    <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
+			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
+        <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0 20 20"
+                to="360 20 20"
+                calcMode="spline"
+                keySplines="0.4, 0, 0.2, 1"
+                keyTimes="0;1"
+                dur="2s"
+                repeatCount="indefinite" />
+    </path>
+    </svg>
+</div>
+
+<!--loading页结束-->
+<body>
+<!--header star-->
+<div class="contents" style="display:none">
+<div class="succeed">
+    <p><img src="images/withdraw-succeed.png"> </p>
+    <h2>支付成功&nbsp;&nbsp;</h2>
+
+    <div class="succeed_choose">
+        <a href="javascript:location.reload()" style="">继续购物</a>
+        <a href="javascript:location.reload()" style="">查看订单</a>
+    </div>
+</div>
+<div class="sc_rank">
+    <p>您当前的等级是<img src="">准推广会员 </p>
+    <!--进度条-->
+    <div class="progressbar">
+        <div class="shim" style="height: 84px;">
+
+        </div><div class="holder clearfix">
+        <div class="bar"><div class="indicator" style="left: -2%; width: 20%;"></div>
+        </div>
+        <div class="labels">
+            <i data-label="准推广员" class="read reading" style="width: 33.3333%;"></i>
+            <i data-label="推广员" class="read" style="width: 33.3333%;"></i>
+            <i data-label="金牌推广员" class="read" style="width: 33.3333%;"></i>
+        </div>
+    </div>
+    </div>
+    <!--进度条-->
+    <a id="sc_rank_con3" href="javascript:(0)" onclick="toshare()"><img src="">再推荐两单就可成为<span class="rank_next">本店推广员</span>，享受店铺收入佣金 <i class="iconfont icon-jiantou1"></i></a>
+</div>
+<div class="tuijian_item">
+    <h3>热门推荐</h3>
+    <table id="tuijian_item_table">
+        <tr>
+            <td>
+                <p class="tuijian_tag"><i class="iconfont icon-biaoqian tag-def"></i><span style="color: #fff;position: absolute;left: 22%;">秒杀</span> </p>
+                <img src="images/succeed_item.png">
+                <p>大果粒水果茶</p>
+                <p><span class="price"><i class="iconfont icon-renminbi"></i>199</span><span class="through">320</span><span style="float: right">已售140</span></p>
+            </td>
+            <td>
+                <img src="images/succeed_item.png">
+                <p>大果粒水果茶</p>
+                <p><span class="price"><i class="iconfont icon-renminbi"></i>199</span><span class="through">320</span><span style="float: right">已售140</span></p>
+
+            </td>
+        </tr>
+    </table>
+
+</div>
+<!--footerone end-->
+
+<!--弹出购内容-->
+<div class="am-share">
+    <!--<div class="am-share-footer">-->
+        <!--<button class="share_btn"><img src="images/chahao.png" /></button>-->
+    <!--</div>-->
+    <div class="am-share-sns box-s">
+        <div class="sdetail clearfloat">
+            <div class="top clearfloat">
+                <img src="images/saosao.png" style="width: 80%">
+            </div>
+            <!--<div class="middle clearfloat">-->
+                <!--<p>颜色分类</p>-->
+                <!--<div class="xia clearfloat">-->
+                    <!--<ul>-->
+                        <!--<li class="ra3 cur">蓝色</li>-->
+                        <!--<li class="ra3">白色</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bottom clearfloat">-->
+                <!--<p class="fl">购买数量</p>-->
+                <!--<div class="you clearfloat fr">-->
+                    <!--<ul>-->
+                        <!--<li id="down"><img src="images/jian.jpg" /></li>-->
+                        <!--<li id="count">1</li>-->
+                        <!--<li onclick="document.getElementById('count').innerHTML++"><img src="images/jia.jpg" /></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <!--<a href="shopcar.html" class="shop-btn db">确定</a>-->
+</div>
+</div>
+<script type="text/javascript">
+    var down = document.getElementById("down");
+    var count = document.getElementById("count");
+    window.onload = function(){
+        down.onclick = function(){
+            if(count.innerHTML > 1){
+                count.innerHTML--;
+            }else{
+                count.innerHTML = 1;
+            }
+        }
+        $(".middle .xia li").click(function() {
+            $(this).addClass('cur').siblings().removeClass('cur');
+        });
+
+    }
+</script>
+</body>
+
+</html>

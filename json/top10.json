@@ -1,0 +1,80 @@
+﻿ [
+        {
+            "user_name": "锤哥",
+            "user_identify": "金牌推广员",
+            "income1": 2.65,
+            "income2": 1.05
+        },
+        {
+            "user_name": "托尼老师",
+            "user_identify": "",
+            "income1": 3.65,
+            "income2": 0
+        },
+        {
+            "user_name": "没错",
+            "user_identify": "金牌推广员",
+            "income1": 3.65,
+            "income2": 1.23
+        },
+        {
+            "user_name": "老大",
+            "user_identify": "",
+            "income1": 2.16,
+            "income2": 0
+        },
+        {
+            "user_name": "老二",
+            "user_identify": "",
+            "income1": 2.65,
+            "income2": 0
+        },
+        {
+            "user_name": "老三",
+            "user_identify": "金牌推广员",
+            "income1": 1.65,
+            "income2": 0.98
+        },
+        {
+            "user_name": "老四",
+            "user_identify": "",
+            "income1": 2.65,
+            "income2": 0
+        },
+        {
+            "user_name": "老五",
+            "user_identify": "金牌推广员",
+            "income1": 2.65,
+            "income2": 0.39
+        },
+        {
+            "user_name": "老六",
+            "user_identify": "",
+            "income1": 7.13,
+            "income2": 0
+        },
+        {
+            "user_name": "老七",
+            "user_identify": "",
+            "income1": 3.66,
+            "income2": 0
+        },
+        {
+            "user_name": "老八",
+            "user_identify": "",
+            "income1": 10.99,
+            "income2": 0
+        },
+        {
+            "user_name": "老九",
+            "user_identify": "",
+            "income1": 2.65,
+            "income2": 0
+        },
+        {
+            "user_name": "老十",
+            "user_identify": "",
+            "income1": 3.16,
+            "income2": 0
+        }
+ ]

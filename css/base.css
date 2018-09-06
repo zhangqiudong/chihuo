@@ -18,16 +18,16 @@ body {
 
 @font-face {
     font-family: 'PingFang';
-    src: url('YourWebFontName.eot'); /* IE9 Compat Modes */
-    src: url('YourWebFontName.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('YourWebFontName.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/PingFang_Regular.otf')  format('truetype'), /* Safari, Android, iOS */
-    url('YourWebFontName.svg#YourWebFontName') format('svg'); /* Legacy iOS */
+    /*src: url('YourWebFontName.eot'); !* IE9 Compat Modes *!*/
+    src:  /* IE6-IE8 */
+    /*url('../YourWebFontName.woff') format('woff'), !* Modern Browsers *!*/
+    url('../fonts/PingFang_Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+    /*url('YourWebFontName.svg#YourWebFontName') format('svg'); !* Legacy iOS *!*/
 }
 
 body {
     font-family: PingFang ,sans-serif ,"微软雅黑";
-    overflow: -Scroll;
+    overflow: Scroll;
     overflow-x: hidden;
     background-color: #f5f5f5;
 }

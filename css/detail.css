@@ -99,10 +99,10 @@
     float: left;
 }
 .through{float: left;text-decoration: line-through}
-.tg_list .through{float: none;text-decoration: line-through;color: #979797;    font-size: 0.5rem;}
-.tg_list h3{height: 1.5rem;line-height: 1.5rem;color:#272727; }
+.tg_list .through{float: none;text-decoration: line-through;color: #979797;    font-size: 0.45rem;}
+.tg_list h3{height: 1.5rem;line-height: 1.5rem;color:#272727;font-size: .45rem; }
 .tg_list h3 small{color:#757575; font-weight: normal}
-.tg_list p{float: right;font-size: .6rem;color: #ff4525}
+.tg_list p{float: right;font-size: .5rem;color: #ff4525}
 .tg_list p i{padding: 0;margin: 0}
 .detail .top .xia span {
     color: #999999;
@@ -128,7 +128,7 @@
 }
 .detail .middle a {
     color: #333333;
-    font-size: .5rem;
+    font-size: .45rem;
     display: block;
     width: 100%;
     height: 100%;
@@ -141,7 +141,7 @@
 .footerone {
     width: 100%;
     border-top: 1px solid #e6e6e6;
-    height: 1.3rem;
+    height: 1.5rem;
     background-color: #fff;
     position: fixed;
     bottom: 1.5rem;
@@ -154,7 +154,7 @@
 
 .footerone .left ul li {
     width: 50%;
-    height: 1.3rem;
+    height: 1.5rem;
     border-right: 1px solid #e6e6e6;
     padding-top: .4rem;
     float: left;
@@ -177,12 +177,12 @@
 .footerone .right .btn {
     display: block;
     width: 100%;
-    height: 1.3rem;
+    height: 1.5rem;
     text-align: center;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
     background-color: #ff9100;
     color: #fff;
-    font-size: .5rem;
+    font-size: .45rem;
 }
 
 .footerone .right .btnone {

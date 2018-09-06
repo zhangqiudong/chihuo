@@ -91,6 +91,8 @@
                             timer=window.setTimeout(function(){
                                 $(contentNum).eq(index).css({"display":"block"});
                                 $(contentNum).eq(index).siblings().css({"display":"none"});
+                                that.addClass("sel_li");
+                                that.siblings().removeClass("sel_li");
                                 that.find("a").css({"background":"#FFF","color":"#fff"});
                                 that.find("strong").show();
                                 that.siblings().find("strong").hide();
@@ -104,7 +106,7 @@
             </script>
 
             <ul class="important cl">
-                <li class="rcsp_1">
+                <li class="rcsp_1 sel_li">
                     <p>我的佣金</p>
                     <strong><i></i></strong>
                 </li>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>积分兑换商城触屏版html5手机wap商城购物网站模板下载【http://www.lanrenmb.com/shenghuofuwu/gouwu/】</title>
+    <title>立刻购买</title>
     <link rel="stylesheet" type="text/css" href="css/base.css"/>
     <link rel="stylesheet" type="text/css" href="css/detail.css"/>
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
@@ -41,11 +41,6 @@
     C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
     C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
     </path>
-
-    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
-    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
-    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
-    <!--</path>-->
     <!--红色部分-->
     <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
@@ -60,39 +55,28 @@
                 dur="2s"
                 repeatCount="indefinite" />
     </path>
-
-    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
-    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
-    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
-    <!--<animateTransform-->
-    <!--attributeName="transform"-->
-    <!--type="rotate"-->
-    <!--from="0 20 20"-->
-    <!--to="360 20 20"-->
-    <!--dur="1.8s"  -->
-    <!--repeatCount="indefinite" />-->
-    <!--</path>-->
     </svg>
 </div>
 
 <!--loading页结束-->
 <body style="background: #F2F2F2">
+<div class="contents" style="display:none">
 <div class="warp warptwo clearfloat">
     <div class="detail clearfloat">
         <!--purcon star-->
         <div class="purlist">
             <table>
                 <tr>
-                    <td rowspan="3"  class="pur_img"> </td>
+                    <td rowspan="3"  class="pur_img"><img src="./images/succeed_item.png"  style="  padding-right: .1rem;  width: 95%;"> </td>
                     <td>米诺斯茶餐厅精选二人套餐A</td>
                     <td>x 1</td>
                 </tr>
                 <tr>
-                    <td>Hey juice  茶桔梗</td>
+                    <td style="    vertical-align: top;">Hey juice  茶桔梗</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>¥99</td>
+                    <td style="    vertical-align: bottom;color: #f44623;    font-weight: bold;">¥99</td>
                     <td></td>
                 </tr>
             </table>
@@ -144,56 +128,6 @@
         <a href="confirm.html" class="btn btnone fl">确认购买</a>
     </div>
 </div>
-<!--footerone end-->
-
-<!--弹出购物车内容-->
-<div class="am-share">
-    <div class="am-share-footer">
-        <button class="share_btn"><img src="images/chahao.png" /></button>
-    </div>
-    <div class="am-share-sns box-s">
-        <div class="sdetail clearfloat">
-            <div class="top clearfloat">
-                <div class="tu clearfloat fl">
-                    <span></span>
-                    <img src="images/xj2.jpg" />
-                </div>
-                <div class="you clearfloat fl">
-                    <p class="tit">单反相机</p>
-                    <span>100000积分</span>
-                </div>
-            </div>
-            <div class="middle clearfloat">
-                <p>颜色分类</p>
-                <div class="xia clearfloat">
-                    <ul>
-                        <li class="ra3 cur">蓝色</li>
-                        <li class="ra3">白色</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="middle clearfloat">
-                <p>机身内存</p>
-                <div class="xia clearfloat">
-                    <ul>
-                        <li class="ra3 cur">120G</li>
-                        <li class="ra3">60G</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="bottom clearfloat">
-                <p class="fl">购买数量</p>
-                <div class="you clearfloat fr">
-                    <ul>
-                        <li id="down"><img src="images/jian.jpg" /></li>
-                        <li id="count">1</li>
-                        <li onclick="document.getElementById('count').innerHTML++"><img src="images/jia.jpg" /></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a href="shopcar.html" class="shop-btn db">确定</a>
 </div>
 <script type="text/javascript">
     var down = document.getElementById("down");

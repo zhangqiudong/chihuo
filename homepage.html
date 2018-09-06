@@ -8,8 +8,6 @@
     <link rel="stylesheet" type="text/css" href="css/detail.css"/>
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/loaders.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/loading.css"/>
-    <link rel="stylesheet" href="css/loading2.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/loading2.css">
@@ -24,8 +22,71 @@
             setTimeout("$('.contents').css('display','block')",1000);
 
         })
+        function toshare(){
+            $(".am-share").addClass("am-modal-active");
+            if($(".sharebg").length>0){
+                $(".sharebg").addClass("sharebg-active");
+            }else{
+                $("body").append('<div class="sharebg"></div>');
+                $(".sharebg").addClass("sharebg-active");
+            }
+            $(".sharebg-active,.share_btn").click(function(){
+                $(".am-share").removeClass("am-modal-active");
+                setTimeout(function(){
+                    $(".sharebg-active").removeClass("sharebg-active");
+                    $(".sharebg").remove();
+                },300);
+            })
+        }
     </script>
+    <script>
+        $(function () {
+            $(".homepage_tag span").click(function () {
+                    $(this).addClass("cl");
+                    $(this).siblings().removeClass("cl");
+                    // alert($(this).text());
+                })
+            })
 
+    </script>
+    <style>
+        .important_r{
+            height: 14rem;
+            overflow: scroll;
+        }
+        .homepage_tab li{width: 33%}
+        .homepage_tag{
+            text-align: center;
+        }
+        .homepage_tag span{
+            width: 23%;
+            color: #979797;
+            float: left;
+            margin-right: 2%;
+            font-size: .45rem;
+            margin-bottom: .2rem;
+            border: 1px solid #ccc;
+        }
+        .homepage_tag span.cl{
+            color: #ff2525;
+            border: 1px solid #ff2525;
+
+        }
+        .am-modal-active{
+            bottom: 50%;
+        }
+        .search_price i {
+            margin-right: 0;
+            color: #979797;
+        }
+        .search_table tr:nth-child(2) td{
+            color: #979797;
+        }
+        .icon-icon--{
+            font-size: .6rem;
+            margin-top: .1rem;
+        }
+    </style>
 </head>
 <!--loading页开始-->
 <div class="scene" style="">
@@ -37,17 +98,11 @@
                 values="0;1;0" dur="1.8s"
                 repeatCount="indefinite">
     </text>
-
     <!--灰色部分-->
     <path fill="#ffedec" d="M20,35c-8.271,0-15-6.729-15-15S11.729,5,20,5s15,6.729,15,15S28.271,35,20,35z M20,5.203
     C11.841,5.203,5.203,11.841,5.203,20c0,8.159,6.638,14.797,14.797,14.797S34.797,28.159,34.797,20
     C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
     </path>
-
-    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
-    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
-    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
-    <!--</path>-->
     <!--红色部分-->
     <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
@@ -62,277 +117,370 @@
                 dur="2s"
                 repeatCount="indefinite" />
     </path>
-
-    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
-    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
-    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
-    <!--<animateTransform-->
-    <!--attributeName="transform"-->
-    <!--type="rotate"-->
-    <!--from="0 20 20"-->
-    <!--to="360 20 20"-->
-    <!--dur="1.8s"  -->
-    <!--repeatCount="indefinite" />-->
-    <!--</path>-->
     </svg>
 </div>
 
 <body style="background: #F2F2F2;">
 <div class="contents" style="display:none">
-<div class="warp warptwo clearfloat" >
-    <div class="detail clearfloat">
-        <div class="tg_more">
-            <div class="">
-                <script type="text/javascript">
-                    $(function(){
-                        var tabNum=$(".important").find("li");
-                        var contentNum=$(".contents").children();
-                        var timer;
-                        $(tabNum).each(function(index){
-                            $(this).hover(function(){
-                                var that=$(this)
-                                timer=window.setTimeout(function(){
-                                    $(contentNum).eq(index).css({"display":"block"});
-                                    $(contentNum).eq(index).siblings().css({"display":"none"});
-                                    that.find("a").css({"background":"#FFF","color":"#fff"});
-                                    that.find("strong").show();
-                                    that.siblings().find("strong").hide();
-                                    that.siblings().find("a").css({"background":"#fff","color":"black"});
-                                },100)
-                            },function(){
-                                window.clearTimeout(timer);
+
+
+    <div class="warp warptwo clearfloat" >
+        <div class="detail clearfloat">
+            <div class="tg_more">
+                <div class="">
+                    <script type="text/javascript">
+                        $(function(){
+                            var tabNum=$(".important").find("li");
+                            var contentNum=$(".contents2").children();
+                            var timer;
+                            $(tabNum).each(function(index){
+                                $(this).hover(function(){
+                                    var that=$(this)
+                                    timer=window.setTimeout(function(){
+                                        $(contentNum).eq(index).css({"display":"block"});
+                                        $(contentNum).eq(index).siblings().css({"display":"none"});
+                                        that.find("a").css({"background":"#FFF","color":"#fff"});
+                                        that.find("strong").show();
+                                        that.siblings().find("strong").hide();
+                                        that.siblings().find("a").css({"background":"#fff","color":"black"});
+                                    },100)
+                                },function(){
+                                    window.clearTimeout(timer);
+                                })
                             })
                         })
-                    })
-                </script>
+                    </script>
+                    <div style="padding: .4rem 4%;  padding-bottom: 0;  background: #fff;">
+                        <div style="background: #F2F2F2; border-radius: .1rem;   padding: 0rem;">
+                            <input type="text" placeholder="请输入店铺名称" style="border-radius: .1rem;width: 90%;height: 1rem; background: #F2F2F2; margin-bottom: 0;     border: none; text-align: center;    font-size: .45rem;    padding: 0 .2rem;">
+                        </div>
+                    </div>
+                    <ul class="important myorders_tab homepage_tab cl">
+                        <li class="rcsp_1">
+                            <p>佣金比例</p>
+                            <strong><i></i></strong>
+                        </li>
+                        <li class="rcsp_2">
+                            <p>销量</p>
+                            <strong style="display:none"><i></i></strong>
+                        </li>
+                        <li class="rcsp_2">
+                            <p>分类<i class="iconfont icon-jiantouarrow483" style="    font-size: .4rem;    margin-left: .2rem;" onClick="toshare()"></i></p>
+                            <strong style="display:none"><i></i></strong>
+                        </li>
+                    </ul>
+                    <div class="contents2 myorders_con" style="background: transparent;">
+                        <div class="cl">
+                            <div class="important_r">
+                                <div class="purlist verify">
+                                    <table class="search_table">
+                                        <tr>
+                                            <td rowspan="4"  class="pur_img verify_img" style="padding-top: 0"><img src="images/search3.png" height="100%"> </td>
+                                            <td colspan="2"><span class="search_tag">津菜</span>津菜典藏（中北镇店）</td>
 
-                <ul class="important myorders_tab cl">
-                    <li class="rcsp_1">
-                        <p>佣金比例</p>
-                        <strong><i></i></strong>
-                    </li>
-                    <li class="rcsp_2">
-                        <p>销量</p>
-                        <strong style="display:none"><i></i></strong>
-                    </li>
-                    <li class="rcsp_2">
-                        <p>分类<i class="iconfont icon-jiantouarrow483"></i></p>
-                        <strong style="display:none"><i></i></strong>
-                    </li>
-                </ul>
-                <div class="contents myorders_con" style="background: transparent;">
-                    <div class="cl">
-                        <div class="important_r">
-                            <div class="purlist verify">
-                                <div class="cname">订单编号：5222340001<span class="orders_state">购买成功</span> </div>
-                                <table>
-                                    <tbody><tr>
-                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
-                                        <td>米诺斯茶餐厅精选二人套餐A</td>
-                                        <td style="text-align: right">x 1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>河东万达店</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="dateline">有限期至 2018.6.10</td>
-                                        <td style="text-align: right;font-weight: bold;">¥199</td>
-                                    </tr>
-                                    </tbody></table>
-                                <div class="buyagain">推荐人：阿汤哥<span class="orders_state use_now">立即使用</span> </div>
-                            </div>
-                            <div class="purlist verify">
-                                <div class="cname">订单编号：5222340001<span class="orders_state">已使用</span> </div>
-                                <table>
-                                    <tbody><tr>
-                                        <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
-                                        <td>米诺斯茶餐厅精选二人套餐A</td>
-                                        <td style="text-align: right">x 1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>河东万达店</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="dateline">有限期至 2018.6.10</td>
-                                        <td style="text-align: right;font-weight: bold;">¥199</td>
-                                    </tr>
-                                    </tbody></table>
-                                <div class="buyagain">推荐人：阿汤哥<span class="orders_state buy_again">再次购买</span> </div>
-                            </div>
+                                        </tr>
+                                        <tr>
+                                            <td>团购价<span class="search_price"><i class="iconfont icon-renminbi"></i>90~<i class="iconfont icon-renminbi"></i>399</span></td>
+                                            <td style="display: flex"><i class="iconfont icon-icon--"></i><span style="margin-top: .2rem;">海光寺</span> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>46%</td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">推广人数量 60<span style="margin-left: .5rem">销量 120</span></td>
+                                            <td style="text-align: right;font-weight: bold;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="purlist verify">
+                                    <table class="search_table">
+                                        <tr>
+                                            <td rowspan="4"  class="pur_img verify_img" style="padding-top: 0"><img src="images/search3.png" height="100%"> </td>
+                                            <td colspan="2"><span class="search_tag">津菜</span>津菜典藏（中北镇店）</td>
 
+                                        </tr>
+                                        <tr>
+                                            <td>团购价<span class="search_price"><i class="iconfont icon-renminbi"></i>90~<i class="iconfont icon-renminbi"></i>399</span></td>
+                                            <td style="display: flex"><i class="iconfont icon-icon--"></i><span style="margin-top: .2rem;">海光寺</span> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>46%</td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">推广人数量 60<span style="margin-left: .5rem">销量 120</span></td>
+                                            <td style="text-align: right;font-weight: bold;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="purlist verify">
+                                    <table class="search_table">
+                                        <tr>
+                                            <td rowspan="4"  class="pur_img verify_img" style="padding-top: 0"><img src="images/search3.png" height="100%"> </td>
+                                            <td colspan="2"><span class="search_tag">津菜</span>津菜典藏（中北镇店）</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>团购价<span class="search_price"><i class="iconfont icon-renminbi"></i>90~<i class="iconfont icon-renminbi"></i>399</span></td>
+                                            <td style="display: flex"><i class="iconfont icon-icon--"></i><span style="margin-top: .2rem;">海光寺</span> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>46%</td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">推广人数量 60<span style="margin-left: .5rem">销量 120</span></td>
+                                            <td style="text-align: right;font-weight: bold;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="purlist verify">
+                                    <table class="search_table">
+                                        <tr>
+                                            <td rowspan="4"  class="pur_img verify_img" style="padding-top: 0"><img src="images/search3.png" height="100%"> </td>
+                                            <td colspan="2"><span class="search_tag">津菜</span>津菜典藏（中北镇店）</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>团购价<span class="search_price"><i class="iconfont icon-renminbi"></i>90~<i class="iconfont icon-renminbi"></i>399</span></td>
+                                            <td style="display: flex"><i class="iconfont icon-icon--"></i><span style="margin-top: .2rem;">海光寺</span> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>46%</td>
+                                            <td> </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">推广人数量 60<span style="margin-left: .5rem">销量 120</span></td>
+                                            <td style="text-align: right;font-weight: bold;"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cl" style="display: none">
-                        <div class="important_r">
-                            <ul class="incomelist incomelist2">
-                                <li>
-                                    <div class="jin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">金牌推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="yin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="zhun">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">准推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="cl" style="display: none">
+                            <div class="important_r">
+                                <ul class="incomelist incomelist2">
+                                    <li>
+                                        <div class="jin">
+                                            <table>
+                                                <tr>
+                                                    <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                    <td class="catge">金牌推广员</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018.5.30<b>已过期</b></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="yin">
+                                            <table>
+                                                <tr>
+                                                    <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                    <td class="catge">推广员</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018.5.30<b>已过期</b></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="zhun">
+                                            <table>
+                                                <tr>
+                                                    <td class="dianming">米诺斯茶餐厅万达店</td>
+                                                    <td class="catge">准推广员</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2018.5.30<b>已过期</b></td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cl" style="display: none">
-                        <div class="important_r">
-                            <ul class="incomelist incomelist2">
-                                <li>
-                                    <div class="jin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">金牌推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="yin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="zhun">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">准推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
+                        <div class="cl" style="display: none">
+                            <div class="important_r">
+                                <div class="purlist verify">
+                                    <div class="cname">订单编号：5222340001<span class="orders_state">购买成功</span> </div>
+                                    <table>
+                                        <tbody><tr>
+                                            <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                            <td>米诺斯茶餐厅精选二人套餐A</td>
+                                            <td style="text-align: right">x 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>河东万达店</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">有限期至 2018.6.10</td>
+                                            <td style="text-align: right;font-weight: bold;">¥199</td>
+                                        </tr>
+                                        </tbody></table>
+                                    <div class="buyagain">推荐人：阿汤哥<span class="orders_state use_now">立即使用</span> </div>
+                                </div>
+                                <div class="purlist verify">
+                                    <div class="cname">订单编号：5222340001<span class="orders_state">已使用</span> </div>
+                                    <table>
+                                        <tbody><tr>
+                                            <td rowspan="3" class="pur_img verify_img"><img src="images/default_img.png" width="100%"> </td>
+                                            <td>米诺斯茶餐厅精选二人套餐A</td>
+                                            <td style="text-align: right">x 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>河东万达店</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="dateline">有限期至 2018.6.10</td>
+                                            <td style="text-align: right;font-weight: bold;">¥199</td>
+                                        </tr>
+                                        </tbody></table>
+                                    <div class="buyagain">推荐人：阿汤哥<span class="orders_state buy_again">再次购买</span> </div>
+                                </div>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="cl" style="display: none">
-                        <div class="important_r">
-                            <ul class="incomelist incomelist2">
-                                <li>
-                                    <div class="jin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">金牌推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="yin">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="zhun">
-                                        <table>
-                                            <tr>
-                                                <td class="dianming">米诺斯茶餐厅万达店</td>
-                                                <td class="catge">准推广员</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018.5.30<b>已过期</b></td>
-                                                <td></td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+        <!--弹出内容-->
+        <div class="am-share" style="background: #fff;">
+            <div class="am-share-footer">
+                <button class="share_btn" style="width: .2rem"></button>
+            </div>
+            <div class="am-share-sns box-s">
+                <div class="sdetail clearfloat">
+                    <div class="middle clearfloat" style="border: none;">
+                        <div style="padding: .4rem 4%;  padding-bottom: 0;  background: #fff;">
+                            <div style="background: #F2F2F2;border-radius: .1rem;  padding: 0rem;">
+                                <input type="text" placeholder="请输入店铺名称" style="width: 90%;border-radius: .1rem;height: 1rem;  background: #F2F2F2; margin-bottom: 0;     border: none; text-align: center;    font-size: .45rem;    padding: 0 .2rem;">
+                            </div>
+                        </div>
+                        <ul class="important myorders_tab homepage_tab cl">
+                            <li class="rcsp_1">
+                                <p>佣金比例</p>
+                                <strong><i></i></strong>
+                            </li>
+                            <li class="rcsp_2">
+                                <p>销量</p>
+                                <strong style="display:none"><i></i></strong>
+                            </li>
+                            <li class="rcsp_2">
+                                <p>分类<i class="iconfont icon-jiantouarrow483" style="    font-size: .4rem;    margin-left: .2rem;" onClick="toshare()"></i></p>
+                                <strong style="display:none"><i></i></strong>
+                            </li>
+                        </ul>
+                        <div class="homepage_tag">
+                            <span class="cl">全部</span>
+                            <span>自助餐</span>
+                            <span>火锅</span>
+                            <span>川菜</span>
+                            <span>日本料理</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="javascript:window.location.reload();" class="shop-btn db">确定</a>
+        </div>
+
+        <script type="text/javascript">
+            var down = document.getElementById("down");
+            var count = document.getElementById("count");
+            window.onload = function(){
+                down.onclick = function(){
+                    if(count.innerHTML > 1){
+                        count.innerHTML--;
+                    }else{
+                        count.innerHTML = 1;
+                    }
+                }
+                $(".middle .xia li").click(function() {
+                    $(this).addClass('cur').siblings().removeClass('cur');
+                });
+
+            }
+        </script>
     </div>
 
-    <script type="text/javascript">
-        var down = document.getElementById("down");
-        var count = document.getElementById("count");
-        window.onload = function(){
-            down.onclick = function(){
-                if(count.innerHTML > 1){
-                    count.innerHTML--;
-                }else{
-                    count.innerHTML = 1;
-                }
-            }
-            $(".middle .xia li").click(function() {
-                $(this).addClass('cur').siblings().removeClass('cur');
+</div>
+
+<script>
+    var msg_list_loading = false;
+    $('.important_r').on('scroll', function(){
+        if ( ! msg_list_loading ){
+            load_more_msg();
+        }
+    })
+
+    function load_more_msg(){
+        var msg_list = $('.important_r');
+        if ( msg_list.height() + msg_list[0].scrollTop >= msg_list[0].scrollHeight - 60 ) {
+            msg_list_loading = true;
+            // msg_list.append('<div class="loading"></div>');
+            $.get('ajax_data.html').done(function( data ){
+                msg_list.find(".loading").remove();
+                msg_list.append( data );
+                msg_list_loading = false;
             });
 
-        }
-    </script>
-</div>
+            $.ajax({
+                type: 'POST',
+                url: './json/homepage.json',
+                dataType: 'json',
+                success: function (data) {
 
-</div>
+                    //将返回值动态加载进下拉框，动态生成标签。
+                    // alert( 123);
+                    for (var i = 0; i < data.length;i++)
+                    {
+                        // $(".withorw_table ").append($('<option >' + data[i].Conpany + '</option>'));
+                        var tc_type = data[i].type;
+                        var tc_name = data[i].name;
+                        var tc_price1 = data[i].price_min;
+                        var tc_price2 = data[i].price_max;
+                        var tc_address = data[i].address;
+                        var tc_promoter_number = data[i].promoter_number;
+                        var tc_sales_volume = data[i].sales_volume;
+                        var tc_share = data[i].share_brokerage*100;
+                        $(".important_r ").append("<div class='purlist verify'><table  class='search_table'><tbody>" +
+                            "<tr>" +
+                            "<td rowspan='4' class='pur_img verify_img' style='padding-top: 0'><img src='images/search3.png' width='100%'> </td>" +
+                            "<td colspan='2'><span class='search_tag'>"+tc_type+"</span>"+tc_name+"</td> "+
+                            "</tr>" +
+                            "<tr>" +
+                            "<td>团购价<span class='search_price'><i class='iconfont icon-renminbi'></i>"+tc_price1+"~<i class='iconfont icon-renminbi'></i>"+tc_price2+"</span></td>" +
+                            "<td style='display: flex'><i class='iconfont icon-icon--'></i><span style='margin-top: .2rem;'>"+tc_address+"</span> </td>" +
+                            "</tr>" +
+                            "<tr>" +
+                            "<td>"+tc_share+"%</td>" +
+                            "<td> </td>" +
+                            "</tr>"+
+                            "<tr>" +
+                            "<td class='dateline'>推广人数量 "+tc_promoter_number+"<span style='margin-left: .5rem'>销量 "+tc_sales_volume+"</span></td>"+
+                            "<td style='text-align: right;font-weight: bold;'></td>"+
+                            "</tbody></table></div>");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThown) {
+                    alert("操作失败！");
+                }
+            })
+
+        }
+    }
+</script>
+
 </body>
 
 </html>

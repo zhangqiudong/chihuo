@@ -20,6 +20,11 @@
 
         })
     </script>
+    <style>
+        .iconfont{
+            font-size: .5rem;
+        }
+    </style>
 </head>
 <!--loading页开始-->
 <div class="scene" style="">
@@ -38,11 +43,6 @@
     C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
     </path>
 
-    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
-    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
-    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
-    <!--</path>-->
-    <!--红色部分-->
     <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
         <animateTransform
@@ -56,40 +56,25 @@
                 dur="2s"
                 repeatCount="indefinite" />
     </path>
-
-    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
-    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
-    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
-    <!--<animateTransform-->
-    <!--attributeName="transform"-->
-    <!--type="rotate"-->
-    <!--from="0 20 20"-->
-    <!--to="360 20 20"-->
-    <!--dur="1.8s"  -->
-    <!--repeatCount="indefinite" />-->
-    <!--</path>-->
     </svg>
 </div>
-
 <!--loading页结束-->
 <body style="background-color: #f0f0f0">
-<div class="vip-header vip-account">
+<div class="contents" style="display:none">
+<div class="vip-header vip-account" style="height: 6rem;">
 
         <dl>
             <dd>
                 <a href="javascript:(0)"><i class="iconfont icon-erji01"></i></a>
             </dd>
         </dl>
-    <div class="vip-account_header">
+    <div class="vip-account_header" style="border-radius: .15rem">
         <dl>
             <dt>
                 <img src="images/user.png" />
             </dt>
-            <dd>
-                <h4>普通推广人员</h4>
-            </dd>
-            <dd>
-
+            <dd style="margin-top: 0.5rem;    width: 70%;">
+                <h4 style="float: left;">普通推广人员</h4><img src="./images/income_v1.png" style="width: 10%;    float: right;margin-top: .1rem;"/>
             </dd>
         </dl>
         <div>
@@ -110,14 +95,16 @@
 
 <!--  -->
 <div class="vip-club border_top_bottom">
-    <div class="vip-account_body">
+    <div class="vip-account_body account_sele">
           <a href="#"> <i class="iconfont icon-weibiaoti-"></i><span>我的订单</span><i class="iconfont icon-jiantou1 fr"></i></a>
           <a href="#"><i class="iconfont icon-cir-cny"></i><span>我的赏金</span><i class="iconfont icon-jiantou1 fr"></i></a>
-          <a href="#"><i class="iconfont icon-xiaoxi"></i><span>消息提醒开关</span><i class="iconfont icon-jiantou1 fr"></i></a>
-       <a href="#"><i class="iconfont icon-shezhi"></i><span>我是管理员</span><i class="iconfont icon-jiantou1 fr"></i></a>
+          <a href="#"><i class="iconfont icon-xiaoxi"></i><span>消息提醒开关</span><i class="iconfont icon-kaiguan3 fr"  onclick="javascript:$(this).toggleClass('icon-kaiguan4');" style="color:#d0a86b;font-size: 1.2rem; margin-top: -.5rem;height: 1rem"></i></a>
+          <div style="clear: both"></div>
+          <a href="#"><i class="iconfont icon-shezhi"></i><span>我是管理员</span><i class="iconfont icon-jiantou1 fr"></i></a>
 
 
     </div>
+</div>
 </div>
 
 

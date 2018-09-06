@@ -42,11 +42,6 @@
     C34.797,11.841,28.159,5.203,20,5.203z" stroke="#ffedec" stroke-width="1" stroke-miterlimit="10">
     </path>
 
-    <!--<path fill="#373a42" d="M20,33.125c-7.237,0-13.125-5.888-13.125-13.125S12.763,6.875,20,6.875S33.125,12.763,33.125,20-->
-    <!--S27.237,33.125,20,33.125z M20,7.078C12.875,7.078,7.078,12.875,7.078,20c0,7.125,5.797,12.922,12.922,12.922-->
-    <!--S32.922,27.125,32.922,20C32.922,12.875,27.125,7.078,20,7.078z">-->
-    <!--</path>-->
-    <!--红色部分-->
     <path fill="#2AA198" stroke="#ff2525" stroke-width="1" stroke-miterlimit="10" d="M5.203,20
 			c0-8.159,6.638-14.797,14.797-14.797V5C11.729,5,5,11.729,5,20s6.729,15,15,15v-0.203C11.841,34.797,5.203,28.159,5.203,20z">
         <animateTransform
@@ -61,38 +56,36 @@
                 repeatCount="indefinite" />
     </path>
 
-    <!--<path fill="#859900" stroke="#859900" stroke-width="0.2027" stroke-miterlimit="10" d="M7.078,20-->
-    <!--c0-7.125,5.797-12.922,12.922-12.922V6.875C12.763,6.875,6.875,12.763,6.875,20S12.763,33.125,20,33.125v-0.203-->
-    <!--C12.875,32.922,7.078,27.125,7.078,20z">-->
-    <!--<animateTransform-->
-    <!--attributeName="transform"-->
-    <!--type="rotate"-->
-    <!--from="0 20 20"-->
-    <!--to="360 20 20"-->
-    <!--dur="1.8s"  -->
-    <!--repeatCount="indefinite" />-->
-    <!--</path>-->
     </svg>
 </div>
 
 <!--loading页结束-->
 <body style="background: #F2F2F2">
+<div class="contents" style="display:none">
 <div class="container">
     <div class="tixian_account">
-        <span>提现账户</span><span><i class="iconfont icon-weixin"></i>微信</span>
+        <span>提现账户</span><i class="iconfont icon-weixin"></i><span style="font-family: PingFang;font-weight: bold;">微信</span>
     </div>
 <div class="tixianContent">
     <div class="tixian_account">
         <span>提现金额</span>
     </div>
     <div class="tixian_input">
-        <i class="iconfont icon-renminbi"></i><input type="text" ><a href="#">全部提现</a>
+        <i class="iconfont icon-renminbi"></i><input type="text" class="txjine"><a href="#" style="color: #f44623">全部提现</a>
     </div>
-
-
-
+    <div class="ky">
+        可用金额<span>38.50</span>元
+    </div>
+</div>
 
 </div>
+</div>
+<div class="tixian_confirm">
+    <p style="margin-top: .5rem;"><a href="javascript:location.reload()">确认提现</a> </p>
+</div>
+<div class="tixian_his_a">
+
+    <p style="margin-top: .5rem;"><a href="javascript:location.reload()">提现历史</a> </p>
 </div>
 <script type="text/javascript">
     var down = document.getElementById("down");

@@ -1,0 +1,69 @@
+[
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 11:35",
+            "income1": 2.58,
+            "income2": 0
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 11:38",
+            "income1": 2.58,
+            "income2": 0
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 12:01",
+            "income1": 4.13,
+            "income2": 0.39
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 12:56",
+            "income1": 6.17,
+            "income2": 1.96
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 13:35",
+            "income1": 2.58,
+            "income2": 1.96
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 13:38",
+            "income1": 1.21,
+            "income2": 0.98
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 13:39",
+            "income1": 3.97,
+            "income2": 0
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 15:56",
+            "income1": 3.14,
+            "income2": 1.66
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 15:58",
+            "income1": 2.58,
+            "income2": 0
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 17:39",
+            "income1": 5.26,
+            "income2": 6.96
+        },
+        {
+            "name": "一号火锅",
+            "order_time": "2018.08.01 19:56",
+            "income1": 0.58,
+            "income2": 0
+        }
+        
+    ]
